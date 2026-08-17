@@ -1,0 +1,14 @@
+---
+config:
+  theme: neo
+---
+flowchart LR
+    A[Staging Layer<br/>- Landing zone for raw data<br/>- Stores data exactly as received<br/>- Enables auditing & reprocessing<br/>- Minimal transformation] 
+    --> 
+    B[ODS Layer<br/>- Cleaned & standardized data<br/>- Removes duplicates & fixes formats<br/>- Standardizes units & codes<br/>- Integrates multiple sources]
+    B --> 
+    C[EDW Layer<br/>- Central historical repository<br/>- Stores Dimensions scd1 or scd2 & Facts<br/>- Applies business rules & derived metrics<br/>- Single source of truth]
+    C --> 
+    D[Data Marts<br/>- Subject-specific datasets<br/>- Aggregations & KPIs for departments<br/>- Improves performance<br/>- Department-focused views]
+    D --> 
+    E[Reporting Layer<br/>- Presentation-ready data<br/>- Pre-aggregated & formatted<br/>- Supports dashboards & BI tools<br/>- Applies security filters]
